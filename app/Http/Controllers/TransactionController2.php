@@ -15,9 +15,10 @@ use Validator;
 class TransactionController2 extends BaseController
 {
     //Edit Transaction
-    function editTransaction($api_url)
+    function editTransaction()
     {
-      
+        
+        $api_url = public_path()."/data/edit.json" ;
         $data = json_decode(file_get_contents($api_url));
         $validator = $this->validateTransactionDetails($data);
               
@@ -151,8 +152,10 @@ class TransactionController2 extends BaseController
     
     // Delete a Transaction
     
-    function deleteTransaction($api_url)
+    function deleteTransaction()
     {
+        $api_url = public_path()."/data/delete.json" ;
+        
         $data = json_decode(file_get_contents($api_url));
         
         if($this->validateDelete($data)->fails() ){

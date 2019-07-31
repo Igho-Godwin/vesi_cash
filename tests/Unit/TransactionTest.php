@@ -24,9 +24,8 @@ class TransactionTest extends TestCase
     {
           
         $this->fakeData();    
-        $api_url = public_path()."/data/data.json" ;
         $transaction_obj = new TransactionController();
-        $response = $transaction_obj->addTransaction($api_url);
+        $response = $transaction_obj->addTransaction();
         $this->assertJsonStringEqualsJsonString(
             $response, json_encode(['success' => True])
         );
@@ -74,17 +73,7 @@ class TransactionTest extends TestCase
        fclose($myfile);
     }
     
-    // tests add Transaction fails
-    public function testAddTransactionFail()
-    {
-        $api_url = public_path()."/data/empty.json";
-        $transaction_obj = new TransactionController();
-        $response = $transaction_obj->addTransaction($api_url);
-        //$this->expectOutputString($response); 
-        $this->assertJsonStringEqualsJsonString(
-            $response, json_encode(['failed' => True])
-        );
-    }
+    
     
     public function fakeDataDelete()
     {
@@ -158,9 +147,8 @@ class TransactionTest extends TestCase
         
         
         $this->fakeDataEdit();    
-        $api_url = public_path()."/data/edit.json" ;
         $transaction_obj = new TransactionController2();
-        $response = $transaction_obj->editTransaction($api_url);
+        $response = $transaction_obj->editTransaction();
         $this->assertJsonStringEqualsJsonString(
             $response, json_encode(['success' => True])
         );
@@ -171,9 +159,8 @@ class TransactionTest extends TestCase
     {
         
         $this->fakeDataDelete();
-        $api_url = public_path()."/data/delete.json" ;
         $transaction_obj = new TransactionController2();
-        $response = $transaction_obj->deleteTransaction($api_url);
+        $response = $transaction_obj->deleteTransaction();
         $this->assertJsonStringEqualsJsonString(
             $response, json_encode(['success' => True])
         );

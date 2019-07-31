@@ -15,8 +15,9 @@ use Validator;
 class TransactionController extends BaseController
 {
     // Adds a Transaction
-    function addTransaction($api_url)
+    function addTransaction()
     {
+        $api_url = public_path()."/data/data.json" ;
         
         if(file_get_contents($api_url) == '')
         {
