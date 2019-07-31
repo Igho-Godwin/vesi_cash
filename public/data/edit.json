@@ -1,0 +1,19 @@
+     {
+        "record_id":90,
+        "details_id":30,
+		"sender": {
+			"email": "clindgren@rogahn.com",
+			"phone": "(921) 782-5815 x929"
+		},
+		"receipient": {
+			"email": "beer.marcel@effertz.com",
+			"phone": "483-278-6336 x44151"
+		},
+		"transactionRecord": 
+
+			{
+				"title": "Ea cum quibusdam quia fuga. Et dolorem occaecati dolorem neque ullam. Aut non in non quia.",
+				"description": "Culpa libero doloribus est facilis. Officia quia alias non sequi. Quas consequatur necessitatibus sed sunt.",
+				"price": 4050
+			}
+	   }
